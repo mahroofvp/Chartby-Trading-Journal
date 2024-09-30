@@ -1,5 +1,5 @@
 import React from "react";
-
+import './home.css'
 const Home = () => {
   return (
     <div className="relative flex items-center justify-center min-h-screen bg-black overflow-hidden">
@@ -27,7 +27,7 @@ const Home = () => {
         <h1 className="text-5xl md:text-7xl font-medium text-yellow-600 mb-2 font-serif">
           CHARTBY 
         </h1>
-        <h3 className="text-3xl md:text-5xl font-extralight fon text-white mb-2">
+        <h3 className="text-3xl md:text-5xl font-extralight text-white mb-2 journal-text">
           TRADING JOURNAL
         </h3>
         <div className="w-auto md:w-auto h-1 bg-slate-200 mb-4"></div>
