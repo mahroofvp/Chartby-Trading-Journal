@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import './home.css'
+import './home.css';
 
 const Home = () => {
-  // State for the background color
+  // State for the background color and text colors
   const [bgColor, setBgColor] = useState('bg-black');
   const [textColor, setTextColor] = useState('text-yellow-600'); 
   const [text2Color, setText2Color] = useState('text-white'); 
 
+  // Function to change theme and text colors
   const changeTheme = (bg, text, text2) => {
     setBgColor(bg);
     setTextColor(text);
@@ -14,12 +15,20 @@ const Home = () => {
   };
 
   return (
-    <div className={`relative flex items-center justify-center min-h-screen ${bgColor} overflow-hidden`}>
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 800 600">
+    <div 
+      className={`relative flex items-center justify-center min-h-screen overflow-hidden ${
+        bgColor === 'bg-[#01030d]' ? "bg-[#01030d]" : bgColor}`}
+      style={{
+        backgroundImage: bgColor === 'bg-[#01030d]' 
+      ? "radial-gradient(circle, rgba(173,176,230,0.1), transparent  90%  )"
+          : 'none'
+      }}
+    >
+      <div className="absolute inset-0 opacity-10 ">
+        <svg className="w-full h-full" viewBox="0 0 800 600 ">
           <path
             d="M 100 450 L 150 350 L 200 400 L 250 300 L 300 350 L 350 300 L 400 350 L 450 200 L 500 250 L 550 150 L 600 200 L 650 100"
-            stroke={`${textColor == "text-yellow-600"? "yellow": "white"}`}
+            stroke={`${textColor === "text-yellow-600" ? "yellow" : "white"}`}
             strokeWidth="4"
             fill="none"
           />
@@ -33,13 +42,13 @@ const Home = () => {
         </svg>
       </div>
 
-      <div className="text-center px-6 animate-fadeInUp z-10">
+      <div className="text-center px-6 animate-fadeInUp z-10 ">
         {/* h1 with dynamic text color */}
         <h1 className={`text-5xl md:text-7xl font-medium ${textColor} mb-2 font-serif`}>
           CHARTBY
         </h1>
 
-        <h3 className={`journal-text text-1xl md:text-4xl lg:text-5xl font-extralight ${text2Color} brightness-75 mb-2 `}>
+        <h3 className={`journal-text text-1xl md:text-4xl lg:text-5xl font-extralight ${text2Color} brightness-75 mb-2`}>
           TRADING JOURNAL
         </h3>
         <div className="w-auto md:w-auto h-1 bg-slate-200 mb-4"></div>
@@ -51,7 +60,9 @@ const Home = () => {
         </p>
         <a
           href="mailto:hello.chartby@gmail.com"
-          className={`${textColor=="text-yellow-600"? "bg-yellow-600": "bg-blue-500" } text-white px-6 py-3 rounded-full text-lg hover:bg-blue-600 mb-6`}
+          className={`${
+            textColor === "text-yellow-600" ? "bg-yellow-600" : "bg-blue-500"
+          } text-white px-6 py-3 rounded-full text-lg hover:bg-blue-600 mb-6`}
         >
           Contact Us
         </a>
@@ -59,20 +70,26 @@ const Home = () => {
         {/* Theme Switcher Circles */}
         <div className="flex justify-center space-x-4 mt-10">
           {/* Black Theme Circle */}
-          <div 
+          <div
             onClick={() => changeTheme('bg-black', 'text-yellow-600', 'text-white')}
-            className={`w-8 h-8 rounded-full bg-black cursor-pointer border ${textColor=='text-yellow-600'? "border-green-400": "border-gray-400"}`}>
-          </div>
+            className={`w-8 h-8 rounded-full bg-black cursor-pointer border ${
+              textColor === 'text-yellow-600' ? "border-green-400" : "border-gray-400"
+            }`}
+          ></div>
           {/* Blue Theme Circle */}
-          <div 
+          <div
             onClick={() => changeTheme('bg-[#01030d]', 'text-white', 'text-white')}
-            className={`w-8 h-8 rounded-full bg-[#01030d] cursor-pointer border ${bgColor=="bg-[#01030d]"? "border-green-400": "border-gray-400"}`}>
-          </div>
+            className={`w-8 h-8 rounded-full bg-[#01030d] cursor-pointer border ${
+              bgColor === "bg-[#01030d]" ? "border-green-400" : "border-gray-400"
+            }`}
+          ></div>
           {/* White Theme Circle */}
-          <div 
+          <div
             onClick={() => changeTheme('bg-black', 'text-white', 'text-gray-100')}
-            className={`w-8 h-8 rounded-full bg-gradient-to-l from-black to-white cursor-pointer border  ${text2Color=='text-gray-100'? "border-green-400": "border-gray-400"}`}>
-          </div>
+            className={`w-8 h-8 rounded-full bg-white cursor-pointer border ${
+              text2Color === 'text-gray-100' ? "border-green-400" : "border-gray-400"
+            }`}
+          ></div>
         </div>
       </div>
     </div>
