@@ -61,17 +61,17 @@ const Home = () => {
           {/* Black Theme Circle */}
           <div 
             onClick={() => changeTheme('bg-black', 'text-yellow-600', 'text-white')}
-            className="w-8 h-8 rounded-full bg-black cursor-pointer border border-gray-400">
+            className={`w-8 h-8 rounded-full bg-black cursor-pointer border ${textColor=='text-yellow-600'? "border-green-400": "border-gray-400"}`}>
           </div>
           {/* Blue Theme Circle */}
           <div 
             onClick={() => changeTheme('bg-[#01030d]', 'text-white', 'text-white')}
-            className="w-8 h-8 rounded-full bg-[#01030d] cursor-pointer border border-gray-400">
+            className={`w-8 h-8 rounded-full bg-[#01030d] cursor-pointer border ${bgColor=="bg-[#01030d]"? "border-green-400": "border-gray-400"}`}>
           </div>
           {/* White Theme Circle */}
           <div 
-            onClick={() => changeTheme('bg-black', 'text-white', 'text-white')}
-            className="w-8 h-8 rounded-full bg-white cursor-pointer border border-gray-400">
+            onClick={() => changeTheme('bg-black', 'text-white', 'text-gray-100')}
+            className={`w-8 h-8 rounded-full bg-white cursor-pointer border  ${text2Color=='text-gray-100'? "border-green-400": "border-gray-400"}`}>
           </div>
         </div>
       </div>
