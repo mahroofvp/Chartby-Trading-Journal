@@ -9,7 +9,7 @@ const Home = () => {
         <svg className="w-full h-full" viewBox="0 0 800 600">
           <path
             d="M 100 450 L 150 350 L 200 400 L 250 300 L 300 350 L 350 300 L 400 350 L 450 200 L 500 250 L 550 150 L 600 200 L 650 100"
-            stroke="yellow"
+            stroke="white"
             strokeWidth="4"
             fill="none"
           />
@@ -24,19 +24,22 @@ const Home = () => {
       </div>
       
       <div className="text-center px-6 animate-fadeInUp z-10">
-        <h1 className="text-5xl md:text-7xl font-medium text-yellow-600 mb-2 font-serif">
+        <h1 className="text-5xl md:text-7xl font-medium text-white mb-2 font-serif">
           CHARTBY 
         </h1>
-        <h3 className="journal-text text-1xl  md:text-4xl lg:text-5xl font-extralight text-white mb-2 ">
+        <h3 className="journal-text text-1xl  md:text-4xl lg:text-5xl font-extralight text-white brightness-75 mb-2 ">
           TRADING JOURNAL
         </h3>
         <div className="w-auto md:w-auto h-1 bg-slate-200 mb-4"></div>
         <p className="text-lg md:text-2xl text-gray-300 mb-8">
-          Launching soon...
-        </p>
+  Launching soon
+  <span className="loading-dot">.</span>
+  <span className="loading-dot">.</span>
+  <span className="loading-dot">.</span>
+</p>
         <a
           href="mailto:hello.chartby@gmail.com"
-          className="bg-yellow-500 text-white px-6 py-3 rounded-full text-lg hover:bg-yellow-600 transition duration-300 animate-pulse"
+          className="bg-blue-500 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-600 "
         >
           Contact Us
         </a>
