@@ -71,7 +71,7 @@ const Home = () => {
           {/* White Theme Circle */}
           <div 
             onClick={() => changeTheme('bg-black', 'text-white', 'text-gray-100')}
-            className={`w-8 h-8 rounded-full bg-white cursor-pointer border  ${text2Color=='text-gray-100'? "border-green-400": "border-gray-400"}`}>
+            className={`w-8 h-8 rounded-full bg-gradient-to-l from-black to-white cursor-pointer border  ${text2Color=='text-gray-100'? "border-green-400": "border-gray-400"}`}>
           </div>
         </div>
       </div>
